@@ -1,0 +1,36 @@
+<div id="ball" style="
+  z-index:5;
+  position: absolute;
+  left:0px;
+  top:10px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:rgb(238, 183, 42)"></div>
+
+<script>
+
+var velocity = 50;
+var position = 0;
+
+
+var ball = document.getElementById('ball');
+
+// YOUR CODE 
+function  ballMoving() {
+  position = position + velocity;
+  ball.style.left = position + 'px';
+  console.log(position);
+  var width = window.innerWidth;
+  var height = window.innerHeight;
+  if (position > width || position < 0) {
+  velocity = velocity * -1;
+}
+};
+
+ballMoving(ball);
+setInterval(ballMoving, 100);
+
+
+
+</script>
